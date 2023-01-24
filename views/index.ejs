@@ -18,7 +18,18 @@
         <textarea class="form-textarea" name="description" id="description" cols="30" rows="5"></textarea>
         <button class="button" type="submit">submit</button>
     </form>
+    <form action="/addBoard" method="POST">
+        <label for="boardName">Board Name</label>
+        <input class="form-input" type="text" name="boardName" required>
+        <label for="column1">Column Name</label>
+        <input id="column1" class="form-input" type="text" name="columns[1]">
+        <label for="column2">Column Name</label>
+        <input id="column2" class="form-input" type="text" name="columns[2]">
+        <button class="button" type="submit">submit</button>
+    </form>
     <ul>
+    <ul>
+        <% console.log("BOARDS HERE ", boards) %>
         <% itemList.forEach(item => { %>
             <li class="list-item" data-id=<%=item._id%>>
                 <div><%= item.nameInput %></div>
