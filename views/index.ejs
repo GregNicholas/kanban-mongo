@@ -30,13 +30,14 @@
     <ul>
     <ul>
         <% console.log("BOARDS HERE ", boards) %>
-        <% itemList.forEach(item => { %>
-            <li class="list-item" data-id=<%=item._id%>>
-                <div><%= item.nameInput %></div>
-                <div><%= item.qtyInput %></div>
-                <div><%= item.description %></div>
-                <a href="/edit/<%=item._id%>">Edit</a>
-                <a href="/edit/delete/<%=item._id%>">Remove</a>
+        <% boards.forEach(board => { %>
+            <li class="list-item" data-id=<%=board._id%>>
+                <div><%= board.name %></div>
+                <% board.columns.forEach(col => { %>
+                    <div><%= col.name %></div>
+                <% }) %>
+                <a href="/edit/<%=board._id%>">Edit</a>
+                <a href="/edit/delete/<%=board._id%>">Remove</a>
             </li>
         <% }) %> 
     </ul>
