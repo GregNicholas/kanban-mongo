@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack Inventory</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <h1>Inventory Homepage</h1>
+    <form action="/new" method="POST">
+        <label for="nameInput">Input Name</label>
+        <input class="form-input" type="text" name="nameInput" required>
+        <label for="qtyInput">Input Quantity</label>
+        <input class="form-input" type="number" name="qtyInput" value="0" min="0">
+        <label for="description">Input Description</label>
+        <textarea class="form-textarea" name="description" id="description" cols="30" rows="5"></textarea>
+        <button class="button" type="submit">submit</button>
+    </form>
+    <ul>
+        <% itemList.forEach(item => { %>
+            <li class="list-item" data-id=<%=item._id%>>
+                <div><%= item.nameInput %></div>
+                <div><%= item.qtyInput %></div>
+                <div><%= item.description %></div>
+                <a href="/edit/<%=item._id%>">Edit</a>
+                <a href="/edit/delete/<%=item._id%>">Remove</a>
+            </li>
+        <% }) %> 
+    </ul>
+</body>
+</html>

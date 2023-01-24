@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack Inventory</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <h1>Edit item</h1>
+    <section>
+        <ul>
+            <li class="list-item">
+                <form action="/edit/update/<%=item._id %>" method="POST">
+                    <label for="nameInput">Input Name</label>
+                    <input  class="form-input"type="text" name="nameInput" value="<%= item.nameInput %>" required>
+                    <label for="qtyInput">Input Quantity</label>
+                    <input class="form-input" type="number" name="qtyInput" value="<%= item.qtyInput %>" min="0">
+                    <label for="description">Input Description</label>
+                    <textarea class="form-textarea" name="description" id="description" cols="30" rows="10" ><%= item.description %></textarea>
+                    <button class="button" type="submit">confirm</button>
+                    <a href="/">cancel</a>
+                </form>
+            </li>
+        </ul> 
+    </section>
+</body>
+</html>
