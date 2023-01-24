@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullstack Inventory</title>
+    <title>Fullstack Kanban</title>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-    <h1>Edit item</h1>
+    <h1>Edit Board</h1>
     <section>
         <ul>
             <li class="list-item">
-                <form action="/edit/update/<%=item._id %>" method="POST">
-                    <label for="nameInput">Input Name</label>
-                    <input  class="form-input"type="text" name="nameInput" value="<%= item.nameInput %>" required>
-                    <label for="qtyInput">Input Quantity</label>
-                    <input class="form-input" type="number" name="qtyInput" value="<%= item.qtyInput %>" min="0">
-                    <label for="description">Input Description</label>
-                    <textarea class="form-textarea" name="description" id="description" cols="30" rows="10" ><%= item.description %></textarea>
+                <form action="/edit/updateBoard/<%=board._id %>" method="POST">
+                    <label for="boardName">Board Name</label>
+                    <input class="form-input" type="text" name="boardName" value="<%= board.name %>" required>
+                    <label for="column1">Column Name</label>
+                    <input id="column1" class="form-input" type="text" name="columns[1]" value="<%= board.columns[0].name %>">
+                    <label for="column2">Column Name</label>
+                    <input id="column2" class="form-input" type="text" name="columns[2]" value="<%= board.columns[1].name %>">
                     <button class="button" type="submit">confirm</button>
                     <a href="/">cancel</a>
                 </form>

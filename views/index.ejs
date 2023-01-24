@@ -27,7 +27,7 @@
         <input id="column2" class="form-input" type="text" name="columns[2]">
         <button class="button" type="submit">submit</button>
     </form>
-    <ul>
+
     <ul>
         <% console.log("BOARDS HERE ", boards) %>
         <% boards.forEach(board => { %>
@@ -36,8 +36,8 @@
                 <% board.columns.forEach(col => { %>
                     <div><%= col.name %></div>
                 <% }) %>
-                <a href="/edit/<%=board._id%>">Edit</a>
-                <a href="/edit/delete/<%=board._id%>">Remove</a>
+                <a href="/edit/board/<%=board._id%>">Edit</a>
+                <a href="/edit/deleteBoard/<%=board._id%>">Remove</a>
             </li>
         <% }) %> 
     </ul>
