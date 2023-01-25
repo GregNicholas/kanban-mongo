@@ -15,14 +15,13 @@ module.exports = {
         const id = req.params.id
         try{
             await Boards.findByIdAndDelete(id)
-            res.redirect("back")
+            res.redirect("/")
         }catch(err){
             if(err) return res.status(500).send(err)
             res.redirect("/")
         }
     },
     updateBoard: async (req, res) => {
-        console.log(req.body)
         const id = req.params.id
         const boardToEdit = await Boards.findById(id)
         boardToEdit.name = req.body.boardName;
