@@ -32,6 +32,16 @@ module.exports = {
             res.redirect("/")
         }
     },
+    deleteBoard: async (req, res) => {
+        const id = req.params.id
+        try{
+            await Boards.findByIdAndDelete(id)
+            res.redirect("back")
+        }catch(err){
+            if(err) return res.status(500).send(err)
+            res.redirect("/")
+        }
+    },
     updateItem: async (req, res) => {
         console.log(req.body)
         const id = req.params.id

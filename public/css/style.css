@@ -128,3 +128,9 @@ ul {
     border-top-color: #1b435e;
     background: #1b435e;
     }
+
+.go-back {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

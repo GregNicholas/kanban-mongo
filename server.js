@@ -13,10 +13,9 @@ const connectDB = require("./config/database");
 // set view engine
 app.set("view engine", "ejs");
 // files will be in public folder, eg css / static html
-app.use(express.static("public"));
 // properly parse requests from forms
 app.use(express.urlencoded({extended: true}));
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // todo - set routes
 app.use('/edit', editRoutes);

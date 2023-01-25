@@ -17,6 +17,10 @@
                 <div><span class="task">task: </span><%= task.title %></div>
             <% }) %>
         <% }) %>
+        <a href="/edit/board/<%=board._id%>">Edit</a>
+        <a href="/edit/deleteBoard/<%=board._id%>">Remove</a>
+        <a href="/">back to list</a>
     </div>
+    <script src="/js/main.js"></script>
 </body>
 </html>
