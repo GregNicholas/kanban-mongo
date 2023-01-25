@@ -8,16 +8,7 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-    <h1>Inventory Homepage</h1>
-    <form action="/new" method="POST">
-        <label for="nameInput">Input Name</label>
-        <input class="form-input" type="text" name="nameInput" required>
-        <label for="qtyInput">Input Quantity</label>
-        <input class="form-input" type="number" name="qtyInput" value="0" min="0">
-        <label for="description">Input Description</label>
-        <textarea class="form-textarea" name="description" id="description" cols="30" rows="5"></textarea>
-        <button class="button" type="submit">submit</button>
-    </form>
+    <h1>Kanban Homepage</h1>
     <form action="/addBoard" method="POST">
         <label for="boardName">Board Name</label>
         <input class="form-input" type="text" name="boardName" required>
@@ -27,7 +18,7 @@
         <input id="column2" class="form-input" type="text" name="columns[2]">
         <button class="button" type="submit">submit</button>
     </form>
-
+<h2>Boards</h2>
     <ul>
         <% console.log("BOARDS HERE ", boards) %>
         <% boards.forEach(board => { %>
