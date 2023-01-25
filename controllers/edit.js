@@ -1,4 +1,3 @@
-const Items = require("../models/Item")
 const Boards = require("../models/Board")
 
 module.exports = {
