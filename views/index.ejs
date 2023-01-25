@@ -32,6 +32,7 @@
         <% console.log("BOARDS HERE ", boards) %>
         <% boards.forEach(board => { %>
             <li class="list-item" data-id=<%=board._id%>>
+                <a href="/board/<%=board._id%>">View Board</a>
                 <div><%= board.name %></div>
                 <% board.columns.forEach(col => { %>
                     <div><%= col.name %></div>

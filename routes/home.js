@@ -8,5 +8,6 @@ const homeController = require('../controllers/home')
 router.get('/', homeController.getIndex) //readonly route
 router.post('/new', homeController.createItem) //create route
 router.post('/addBoard', homeController.createBoard) // create board
+router.get('/board/:id', homeController.getBoard) // get board
 
 module.exports = router

@@ -31,6 +31,16 @@ module.exports = {
             res.redirect('/')
         }
     },
+    getBoard: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const board = await Boards.findById(id)
+            res.render("board.ejs", {board: board})
+        }catch(err) {
+            if(err) return res.status(500).send(err)
+            res.redirect("/")
+        }
+    },
     createItem: async (req, res) => {
         const newItem = new Items(
             {

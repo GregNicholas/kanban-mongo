@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack Inventory</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <h1>Board</h1>
+    <div class="board-card">
+        <h2><%= board.name %></h2>
+        <% board.columns.forEach(column => { %>
+            <div><span class="column">column: </span><%= column.name %></div>
+            <% column.tasks.forEach(task => { %>
+                <div><span class="task">task: </span><%= task.title %></div>
+            <% }) %>
+        <% }) %>
+    </div>
+</body>
+</html>
